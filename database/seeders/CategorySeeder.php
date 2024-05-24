@@ -17,6 +17,7 @@ class CategorySeeder extends Seeder
         foreach ($names as $name) {
             DB::table('categories')->insert([
                 'name' => $name,
+                'created_at' => now(),
             ]);
         }
     }
