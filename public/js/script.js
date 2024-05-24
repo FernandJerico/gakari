@@ -16,3 +16,9 @@ var swiper = new Swiper(".mySwiper", {
     },
     loop: true,
 });
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY > 0;
+    header.classList.toggle("scrolling-active", scrollPosition);
+});
