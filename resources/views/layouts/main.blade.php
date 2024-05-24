@@ -27,22 +27,7 @@
         @yield('section')
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="social">
-                <img src="{{ asset('images/instagram.png') }}" alt="ig">
-                <p>GaleriKarya_id</p>
-            </div>
-            <div class="social">
-                <img src="{{ asset('images/web.png') }}" alt="web">
-                <p>www.galerikaryaindonesia.com</p>
-            </div>
-            <div class="social">
-                <img src="{{ asset('images/mail.png') }}" alt="mail">
-                <p>GaleriKaryaId@Gmail.com</p>
-            </div>
-        </div>
-    </footer>
+    @include('partials.footer')
 
     {{-- SwiperJS --}}
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
