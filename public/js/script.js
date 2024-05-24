@@ -1,0 +1,24 @@
+var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "3",
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    loop: true,
+});
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY > 0;
+    header.classList.toggle("scrolling-active", scrollPosition);
+});
