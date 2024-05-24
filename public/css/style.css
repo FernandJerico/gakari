@@ -74,6 +74,10 @@ header nav {
     font-weight: 700;
 }
 
+.nav-links .nav-item.active {
+    font-weight: 700;
+}
+
 .auth a {
     text-transform: uppercase;
     text-decoration: none;
