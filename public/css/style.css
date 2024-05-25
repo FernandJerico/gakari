@@ -332,6 +332,47 @@ header nav {
     background-color: #101736;
 }
 
+.exploration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0 100px 0;
+}
+
+.exploration .title {
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 78px;
+    color: var(--text-color);
+}
+
+.exploration .exploration-category {
+    width: 80%;
+    padding: 0 40px;
+    margin-top: 40px;
+}
+
+.choice-chip-container .choice-chip {
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    padding: 0 24px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 4px 10px;
+}
+
+.choice-chip-container .choice-chip.active {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+.exploration hr {
+    width: 90%;
+    margin-top: 50px;
+    border: 1px solid var(--text-color);
+}
+
 footer .footer-content {
     margin-top: 18px;
     display: flex;

@@ -8,8 +8,8 @@
             <li class="nav-item"><a href="#">Tentang Kami</a></li>
         </ul>
         <div class="auth">
-            <a href="#" class="btn-register">Daftar</a>
-            <a href="#" class="btn-login">Masuk</a>
+            <a href="{{ route('register') }}" class="btn-register">Daftar</a>
+            <a href="{{ route('login') }}" class="btn-login">Masuk</a>
         </div>
     </nav>
 </header>
