@@ -700,6 +700,10 @@ footer .footer-content .social p {
     box-shadow: 0px 0px 9px 3px #00000080 !important;
 }
 
+.dropdown-toggle::after {
+    content: none !important;
+}
+
 .dropdown-menu .profile,
 .dropdown-menu .menu {
     display: flex;
