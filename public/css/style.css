@@ -78,7 +78,8 @@ header nav {
     font-weight: 700;
 }
 
-.auth a {
+.auth .btn-register,
+.auth .btn-login {
     text-transform: uppercase;
     text-decoration: none;
     color: var(--text-color);
@@ -103,6 +104,11 @@ header nav {
 
 .auth .btn-login:hover {
     background-color: #101736;
+}
+
+.auth button {
+    background-color: var(--background-color);
+    border: none;
 }
 
 .hero {
@@ -531,4 +537,185 @@ footer .footer-content .social p {
     margin-top: -25px;
     position: relative;
     z-index: 2;
+}
+
+.detail-exploration {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 100px 0;
+}
+
+.detail-exploration .back {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+}
+
+.detail-exploration .content-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-exploration .content-left .author-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.detail-exploration .content-left .author-info .name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.detail-exploration .content-left .author-info .name h4 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--text-color);
+}
+
+.detail-exploration .content-left .author-info a {
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: var(--background-color);
+    background-color: var(--text-color);
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.detail-exploration .content-left .artwork img {
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.detail-exploration .content-right {
+    margin-top: 56px;
+}
+
+.detail-exploration .content-right .description {
+    width: 351px;
+    padding: 20px;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+}
+
+.detail-exploration .content-right .like-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    margin: 8px 0 8px 0;
+}
+
+.detail-exploration .content-right .like-comment .like,
+.detail-exploration .content-right .like-comment .comment {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    margin: 0 8px;
+}
+
+.detail-exploration .content-right .like-comment .like img,
+.detail-exploration .content-right .like-comment .comment img {
+    width: 28px;
+    height: 28px;
+}
+
+.detail-exploration .content-right .like-comment .like p,
+.detail-exploration .content-right .like-comment .comment p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--text-color);
+}
+
+.detail-exploration .content-right .like-comment .comment button {
+    border: none;
+    background-color: transparent;
+    margin-top: -12px;
+}
+
+.detail-exploration .content-right .textarea-container {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    margin-right: 8px;
+}
+
+.textarea-hidden {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.detail-exploration .content-right .textarea {
+    width: 270px;
+    border-radius: 10px;
+    border: 1px solid var(--text-color);
+    background-color: var(--background-color);
+    padding: 8px;
+}
+
+.detail-exploration .content-right .textarea form textarea {
+    background-color: var(--background-color);
+    border: none;
+}
+
+.detail-exploration .content-right .textarea form {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.detail-exploration .content-right .textarea .btn-okay {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
+    padding: 2px 6px;
+    margin-top: 8px;
+}
+
+.profile-photo {
+    border-radius: 50%;
+}
+
+.dropdown-menu {
+    width: 200px;
+    padding: 20px !important;
+    background-color: var(--background-color) !important;
+    box-shadow: 0px 0px 9px 3px #00000080 !important;
+}
+
+.dropdown-toggle::after {
+    content: none !important;
+}
+
+.dropdown-menu .profile,
+.dropdown-menu .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-menu .menu a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--text-color);
+    color: var(--text-color) !important;
+    text-decoration: none !important;
 }

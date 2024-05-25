@@ -25,7 +25,8 @@
         <div class="row">
             @forelse ($artworks as $artwork)
             <div class="card-artworks">
-                <a href="#"><img src="{{ asset('images/woops.png') }}" alt="Illustration" class="img-fluid"></a>
+                <a href="{{ route('eksplorasi.show', $artwork->id) }}"><img src="{{ asset('images/woops.png') }}"
+                        alt="Illustration" class="img-fluid"></a>
                 <div class="author-info">
                     <img src="{{ asset('images/logo.png') }}" alt="author">
                     <p class="author-name">{{ $artwork->user->name }}, judul karya</p>
