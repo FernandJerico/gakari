@@ -22,7 +22,79 @@
         </div>
         <hr>
         <div class="exploration-card">
-
+            <div class="row grid">
+                <div class="grid-sizer"></div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/woops.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/menelusuri.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/sketch.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/posters.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/pemandangan.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/illustration.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/woops.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/sketch.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/illustration.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+                <div class="card-artworks grid-item">
+                    <img src="{{ asset('images/posters.png') }}" alt="Illustration" class="img-fluid">
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name">Nama Author, judul karya</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

@@ -373,6 +373,54 @@ header nav {
     border: 1px solid var(--text-color);
 }
 
+.exploration .exploration-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.exploration .exploration-card .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.exploration .exploration-card .card-artworks {
+    border-radius: 8px;
+    max-width: 240px;
+    max-height: min-content;
+}
+
+.exploration .exploration-card .card-artworks img.img-fluid {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.exploration .exploration-card .card-artworks .author-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 6px;
+}
+
+.exploration .exploration-card .card-artworks .author-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.exploration .exploration-card .card-artworks .author-info p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: var(--text-color);
+    margin: 0;
+}
+
 footer .footer-content {
     margin-top: 18px;
     display: flex;
