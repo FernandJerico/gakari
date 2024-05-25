@@ -24,7 +24,8 @@
         <div class="exploration-card">
             <div class="row">
                 <div class="card-artworks">
-                    <a href="#"><img src="{{ asset('images/woops.png') }}" alt="Illustration" class="img-fluid"></a>
+                    <a href="{{ route('detail.eksplorasi') }}"><img src="{{ asset('images/woops.png') }}" alt="Illustration"
+                            class="img-fluid"></a>
                     <div class="author-info">
                         <img src="{{ asset('images/logo.png') }}" alt="author">
                         <p class="author-name">Nama Author, judul karya</p>
