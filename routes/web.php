@@ -7,9 +7,7 @@ Route::get('/', function () {
     return view('pages.landing');
 });
 
-Route::get('/eksplorasi', function () {
-    return view('pages.exploration');
-})->name('eksplorasi');
+Route::resource('eksplorasi', App\Http\Controllers\ExplorationController::class);
 
 Auth::routes();
 
