@@ -11,8 +11,6 @@ Route::resource('eksplorasi', App\Http\Controllers\ExplorationController::class)
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::name('user.')->prefix('user')->group(function () {
     Route::middleware(['isLogin'])->group(function () {
         Route::get('/', [App\Http\Controllers\User\ArtworkController::class, 'index'])->name('index');
