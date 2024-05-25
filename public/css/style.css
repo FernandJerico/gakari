@@ -389,13 +389,21 @@ header nav {
 
 .exploration .exploration-card .card-artworks {
     border-radius: 8px;
-    max-width: 240px;
-    max-height: min-content;
+    width: 240px;
+    height: 300px;
+    margin-bottom: 54px;
+    transition: all 0.3s ease;
 }
 
-.exploration .exploration-card .card-artworks img.img-fluid {
+.exploration .exploration-card .card-artworks:hover {
+    transform: translateY(-5px);
+}
+
+.exploration .exploration-card .card-artworks img {
     width: 100%;
-    height: auto;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
     display: block;
 }
 
@@ -404,7 +412,7 @@ header nav {
     flex-direction: row;
     align-items: center;
     padding: 10px;
-    gap: 6px;
+    gap: 4px;
 }
 
 .exploration .exploration-card .card-artworks .author-info img {
@@ -414,11 +422,10 @@ header nav {
 }
 
 .exploration .exploration-card .card-artworks .author-info p {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 21px;
     color: var(--text-color);
-    margin: 0;
 }
 
 footer .footer-content {
