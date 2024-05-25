@@ -74,6 +74,10 @@ header nav {
     font-weight: 700;
 }
 
+.nav-links .nav-item.active {
+    font-weight: 700;
+}
+
 .auth a {
     text-transform: uppercase;
     text-decoration: none;
@@ -326,6 +330,95 @@ header nav {
 
 .explore .others a:hover {
     background-color: #101736;
+}
+
+.exploration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0 100px 0;
+}
+
+.exploration .title {
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 78px;
+    color: var(--text-color);
+}
+
+.exploration .exploration-category {
+    width: 80%;
+    padding: 0 40px;
+    margin-top: 40px;
+}
+
+.choice-chip-container .choice-chip {
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    padding: 0 24px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 4px 10px;
+}
+
+.choice-chip-container .choice-chip.active {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+.exploration hr {
+    width: 90%;
+    margin-top: 50px;
+    border: 1px solid var(--text-color);
+}
+
+.exploration .exploration-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.exploration .exploration-card .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.exploration .exploration-card .card-artworks {
+    border-radius: 8px;
+    max-width: 240px;
+    max-height: min-content;
+}
+
+.exploration .exploration-card .card-artworks img.img-fluid {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.exploration .exploration-card .card-artworks .author-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 6px;
+}
+
+.exploration .exploration-card .card-artworks .author-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.exploration .exploration-card .card-artworks .author-info p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: var(--text-color);
+    margin: 0;
 }
 
 footer .footer-content {
