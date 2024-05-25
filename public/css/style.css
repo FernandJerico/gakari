@@ -78,7 +78,8 @@ header nav {
     font-weight: 700;
 }
 
-.auth a {
+.auth .btn-register,
+.auth .btn-login {
     text-transform: uppercase;
     text-decoration: none;
     color: var(--text-color);
@@ -103,6 +104,11 @@ header nav {
 
 .auth .btn-login:hover {
     background-color: #101736;
+}
+
+.auth button {
+    background-color: var(--background-color);
+    border: none;
 }
 
 .hero {
@@ -681,4 +687,31 @@ footer .footer-content .social p {
     border-radius: 3px;
     padding: 2px 6px;
     margin-top: 8px;
+}
+
+.profile-photo {
+    border-radius: 50%;
+}
+
+.dropdown-menu {
+    width: 200px;
+    padding: 20px !important;
+    background-color: var(--background-color) !important;
+    box-shadow: 0px 0px 9px 3px #00000080 !important;
+}
+
+.dropdown-menu .profile,
+.dropdown-menu .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-menu .menu a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--text-color);
+    color: var(--text-color) !important;
+    text-decoration: none !important;
 }
