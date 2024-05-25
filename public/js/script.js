@@ -22,3 +22,12 @@ window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY > 0;
     header.classList.toggle("scrolling-active", scrollPosition);
 });
+
+document.getElementById("commentButton").addEventListener("click", function () {
+    var textareaDiv = document.querySelector(".textarea");
+    if (textareaDiv.classList.contains("textarea-hidden")) {
+        textareaDiv.classList.remove("textarea-hidden");
+    } else {
+        textareaDiv.classList.add("textarea-hidden");
+    }
+});
