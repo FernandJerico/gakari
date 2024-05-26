@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('section')
+@include('partials.alert')
 <div class="profile-container">
     <a href="{{ url()->previous() }}"><img src="{{ asset('images/back.png') }}" alt="back" width="40px"
             class="back"></a>

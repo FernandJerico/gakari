@@ -16,6 +16,7 @@
     </div>
     <hr>
     <div class="my-artworks">
+        @include('partials.alert')
         <div class="action mt-2">
             <button class="btn-action">Hapus</button>
             <div class="dropdown">
