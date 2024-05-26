@@ -22,13 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Header scroll effect
-    const header = document.querySelector("header");
-    if (header) {
-        window.addEventListener("scroll", () => {
-            const scrollPosition = window.scrollY > 0;
-            header.classList.toggle("scrolling-active", scrollPosition);
-        });
+    // Cek apakah ini adalah route landing berdasarkan URL atau route name
+    const currentPath = window.location.pathname;
+
+    // Sesuaikan '/' dengan path route landing Anda
+    if (currentPath === "/" || currentPath === "/eksplorasi") {
+        const header = document.querySelector("header");
+        if (header) {
+            window.addEventListener("scroll", () => {
+                const scrollPosition = window.scrollY > 0;
+                header.classList.toggle("scrolling-active", scrollPosition);
+            });
+        }
     }
 
     // Comment button toggle
