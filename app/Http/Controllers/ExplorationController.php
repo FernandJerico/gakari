@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artwork;
 use App\Models\Comment;
 use App\Models\Like;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -113,18 +114,25 @@ class ExplorationController extends Controller
 
     public function comment(Request $request, string $id)
     {
-        $auth = Auth::check();
-        if (!$auth) {
-            return redirect()->route('login');
-        }
-        $user_id = Auth::id();
-
-        Comment::create([
-            'user_id' => $user_id,
-            'artwork_id' => $id,
-            'message' => $request->input('message'),
+        $request->validate([
+            'message' => 'required|string'
         ]);
+        try {
+            $auth = Auth::check();
+            if (!$auth) {
+                return redirect()->route('login');
+            }
+            $user_id = Auth::id();
 
-        return redirect()->back();
+            Comment::create([
+                'user_id' => $user_id,
+                'artwork_id' => $id,
+                'message' => $request->input('message'),
+            ]);
+
+            return redirect()->back()->with('success', 'Comment has been sent');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Failed to comment');
+        }
     }
 }
