@@ -30,7 +30,7 @@
                                 class="img-fluid"></a>
                         <div class="author-info">
                             <img src="{{ asset('images/logo.png') }}" alt="author">
-                            <p class="author-name">{{ $artwork->user->name }}, judul karya</p>
+                            <p class="author-name mt-2">{{ $artwork->user->name }}, judul karya</p>
                         </div>
                     </div>
                 @empty
