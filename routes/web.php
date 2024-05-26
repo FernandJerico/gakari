@@ -8,6 +8,7 @@ Route::get('/', function () {
 });
 
 Route::resource('eksplorasi', App\Http\Controllers\ExplorationController::class);
+Route::post('eksplorasi/like/{id}', [App\Http\Controllers\ExplorationController::class, 'like'])->name('eksplorasi.like');
 
 Auth::routes();
 

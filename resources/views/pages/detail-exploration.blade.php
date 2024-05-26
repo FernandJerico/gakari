@@ -24,9 +24,17 @@
             </div>
             <div class="like-comment">
                 <div class="like">
-                    <p>100</p>
-                    {{-- <img src="{{ asset('images/heart.png') }}" alt="like"> --}}
-                    <img src="{{ asset('images/heart-filled.png') }}" alt="like">
+                    <p id="likeCount">{{ $likes }}</p>
+                    @if ($isLiked)
+                    <img src="{{ asset('images/heart-filled.png') }}" alt="unlike" id="unlikeButton"
+                        style="cursor: pointer">
+                    <img src="{{ asset('images/heart.png') }}" alt="like" id="likeButton"
+                        style="display: none; cursor: pointer">
+                    @else
+                    <img src="{{ asset('images/heart.png') }}" alt="like" id="likeButton" style="cursor: pointer">
+                    <img src="{{ asset('images/heart-filled.png') }}" alt="unlike" id="unlikeButton"
+                        style="display: none; cursor: pointer">
+                    @endif
                 </div>
                 <div class="comment">
                     <p>10</p>
@@ -44,4 +52,42 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        id = {{ $data->id }};
+        $('#likeButton').click(function() {
+            $.ajax({
+                url: `/eksplorasi/like/${id}`,
+                type: 'POST',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                success: function(response) {
+                    $('#likeCount').text(response.count);
+                    $('#likeButton').hide();
+                    $('#unlikeButton').show();
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+
+        $('#unlikeButton').click(function() {
+            $.ajax({
+                url: `/eksplorasi/like/${id}`,
+                type: 'POST',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                success: function(response) {
+                    $('#likeCount').text(response.count);
+                    $('#unlikeButton').hide();
+                    $('#likeButton').show();
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
 @endsection
