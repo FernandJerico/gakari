@@ -34,48 +34,70 @@
                         !!}</p>
                 </div>
             </div>
-            @empty
-            <p>Tidak ada karya</p>
-            @endforelse
+        </div>
+        <hr>
+        <div class="exploration-card">
+            <div class="row">
+                @forelse ($artworks as $artwork)
+                <div class="card-artworks">
+                    <a href="{{ route('eksplorasi.show', $artwork->id) }}"><img
+                            src="{{ asset('storage/artwork/' . $artwork->image) }}" alt="Illustration"
+                            class="img-fluid"></a>
+                    <div class="author-info">
+                        <img src="{{ asset('images/logo.png') }}" alt="author">
+                        <p class="author-name mt-2">{{ $artwork->user->name }}, judul karya</p>
+                    </div>
+                </div>
+                @empty
+                <p>Tidak ada karya</p>
+                @endforelse
 
+            </div>
         </div>
     </div>
-</div>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.choice-chip').click(function() {
-            $('.choice-chip').removeClass('active');
-            $(this).addClass('active');
-            var category = $(this).text();
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.choice-chip').click(function() {
+                $('.choice-chip').removeClass('active');
+                $(this).addClass('active');
+                var category = $(this).text();
 
-            $.ajax({
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            url: '/eksplorasi',
-            type: 'POST',
-            data: { category: category },
-            success: function(response) {
-                $('.exploration-card .row').empty();
-                $.each(response, function(index, artwork) {
-                    var card = `
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: '/eksplorasi',
+                    type: 'POST',
+                    data: {
+                        category: category
+                    },
+                    success: function(response) {
+                        $('.exploration-card .row').empty();
+                        $.each(response, function(index, artwork) {
+                            var card = `
                         <div class="card-artworks">
+<<<<<<< HEAD
                             <a href="/eksplorasi/${artwork.id}"><img src="{{ asset('storage/artwork/${artwork.image}') }}" alt="Illustration" class="img-fluid"></a>
+=======
+                            <a href="/eksplorasi/${artwork.id}"><img src="{{ asset('storage/artwork/' . $artwork->image) }}" alt="Illustration" class="img-fluid"></a>
+>>>>>>> e149b13026e33a53a7ecb39b42fdb16b102c9da0
                             <div class="author-info">
                                 <img src="{{ asset('images/logo.png') }}" alt="author">
                                 <p class="author-name">${artwork.user.name}, ${artwork.description.slice(0,10)} ...</p>
                             </div>
                         </div>
                     `;
-                    $('.exploration-card .row').append(card);
+                            $('.exploration-card .row').append(card);
+                        });
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                    }
                 });
-            },
-            error: function(xhr) {
-                console.log(xhr.responseText);
-            }
             });
         });
-    });
-</script>
-@endsection
+    </script>
+    @endsection

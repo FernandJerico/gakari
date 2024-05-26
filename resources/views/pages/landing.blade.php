@@ -72,7 +72,8 @@
     </div>
     <div class="others">
         <a href="{{ route('eksplorasi.index') }}" class="btn-other">Lainnya</a>
-        <img src="{{ asset('images/arrow-right2.png') }}" alt="arrow" width="16px">
+        <a href="{{ route('eksplorasi.index') }}"><img src="{{ asset('images/arrow-right2.png') }}" alt="arrow"
+                width="16px"></a>
     </div>
 </div>
 @endsection

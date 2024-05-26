@@ -326,7 +326,7 @@ header nav {
     gap: 16px;
 }
 
-.explore .others a {
+.explore .others .btn-other {
     display: inline-block;
     padding: 16px 76px;
     text-decoration: none;
@@ -337,7 +337,7 @@ header nav {
     font-weight: 600;
 }
 
-.explore .others a:hover {
+.explore .others .btn-other:hover {
     background-color: #101736;
 }
 /* End Landing Page Section */
@@ -422,7 +422,6 @@ header nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px;
     gap: 4px;
 }
 
@@ -575,16 +574,16 @@ footer .footer-content .social p {
 
 .detail-exploration .content-left .author-info {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    gap: 20px;
 }
 
 .detail-exploration .content-left .author-info .name {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 4px;
 }
 
 .detail-exploration .content-left .author-info .name h4 {
@@ -607,7 +606,7 @@ footer .footer-content .social p {
 
 .detail-exploration .content-left .artwork img {
     width: 100%;
-    height: 750px;
+    height: 550px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -617,7 +616,7 @@ footer .footer-content .social p {
 }
 
 .detail-exploration .content-right .description {
-    width: 351px;
+    width: 75%;
     padding: 20px;
     border: 1px solid var(--text-color);
     border-radius: 10px;
@@ -629,6 +628,7 @@ footer .footer-content .social p {
     align-items: center;
     justify-content: end;
     margin: 8px 0 8px 0;
+    width: 75%;
 }
 
 .detail-exploration .content-right .like-comment .like,
@@ -659,11 +659,22 @@ footer .footer-content .social p {
     margin-top: -12px;
 }
 
+.detail-exploration .content-right .list-comment {
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid var(--text-color);
+    padding: 8px;
+    margin-top: 8px;
+}
+
 .detail-exploration .content-right .textarea-container {
     display: flex;
     align-items: end;
     justify-content: end;
     margin-right: 8px;
+    width: 75%;
 }
 
 .textarea-hidden {
