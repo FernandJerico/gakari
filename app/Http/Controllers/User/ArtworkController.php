@@ -4,8 +4,10 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Artwork;
+use App\Models\Category;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArtworkController extends Controller
 {
@@ -14,10 +16,11 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-        $user = auth()->id();
-        $artworks = Artwork::select('id', 'image')->with('user', 'category')->where('user_id', $user)->get();
+        $user_id = Auth::id();
+        $artworks = Artwork::select('id', 'image')->with('user', 'category')->where('user_id', $user_id)->get();
+        $categories = Category::select('id', 'name')->get();
 
-        return view('pages.exploration', compact('artworks'));
+        return view('pages.profile', compact('artworks', 'categories'));
     }
 
     /**
@@ -49,9 +52,9 @@ class ArtworkController extends Controller
 
             Artwork::create($data);
 
-            return redirect()->route('user.artwork.index')->with('success', 'Artwork berhasil ditambahkan!!');
+            return redirect()->route('profile.index')->with('success', 'Artwork berhasil ditambahkan!!');
         } catch (Exception $e) {
-            return redirect()->route('user.artwork.index')->with('error', 'Artwork Gagal ditambahkan!!');
+            return redirect()->route('profile.index')->with('error', 'Artwork Gagal ditambahkan!!');
         }
     }
 
