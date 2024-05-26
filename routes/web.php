@@ -7,22 +7,14 @@ Route::get('/', function () {
     return view('pages.landing');
 })->name('landing');
 
-Route::get('/profile', function () {
-    return view('pages.profile');
-})->name('profile');
-
-Route::get('/edit-profile', function () {
-    return view('pages.edit-profile');
-})->name('edit.profile');
-
-Route::resource('eksplorasi', App\Http\Controllers\ExplorationController::class);
+Route::resource('eksplorasi', App\Http\Controllers\ExplorationController::class)->except('create', 'edit', 'update', 'destroy');
 Route::post('eksplorasi/like/{id}', [App\Http\Controllers\ExplorationController::class, 'like'])->name('eksplorasi.like');
 Route::post('eksplorasi/comment/{id}', [App\Http\Controllers\ExplorationController::class, 'comment'])->name('eksplorasi.comment');
 
 Auth::routes();
 
-Route::name('user.')->prefix('user')->group(function () {
-    Route::middleware(['isLogin'])->group(function () {
-        Route::get('/', [App\Http\Controllers\User\ArtworkController::class, 'index'])->name('index');
-    });
+Route::middleware(['isLogin'])->group(function () {
+    Route::resource('profile', App\Http\Controllers\User\ArtworkController::class)->except('create', 'show', 'edit', 'update');
+    Route::get('user/edit-profile', [App\Http\Controllers\User\UserController::class, 'index'])->name('edit.profile');
+    Route::put('user/update', [App\Http\Controllers\User\UserController::class, 'update'])->name('update.profile');
 });
