@@ -15,7 +15,7 @@
                 <a href="#">kunjungi profil</a>
             </div>
             <div class="artwork">
-                <img src="{{ asset('images/woops.png') }}" alt="Illustration" class="img-fluid">
+                <img src="{{ asset('storage/artwork/' . $data->image) }}" alt="Illustration" class="img-fluid">
             </div>
         </div>
         <div class="content-right w-50">

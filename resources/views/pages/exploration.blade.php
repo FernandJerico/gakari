@@ -25,11 +25,12 @@
         <div class="row">
             @forelse ($artworks as $artwork)
             <div class="card-artworks">
-                <a href="{{ route('eksplorasi.show', $artwork->id) }}"><img src="{{ asset('images/woops.png') }}"
-                        alt="Illustration" class="img-fluid"></a>
+                <a href="{{ route('eksplorasi.show', $artwork->id) }}"><img
+                        src="{{ asset('storage/artwork/' . $artwork->image) }}" alt="Illustration"
+                        class="img-fluid"></a>
                 <div class="author-info">
                     <img src="{{ asset('images/logo.png') }}" alt="author">
-                    <p class="author-name">{{ $artwork->user->name }}, judul karya</p>
+                    <p class="author-name">{{ $artwork->user->name }}</p>
                 </div>
             </div>
             @empty
@@ -59,10 +60,10 @@
                 $.each(response, function(index, artwork) {
                     var card = `
                         <div class="card-artworks">
-                            <a href="/eksplorasi/${artwork.id}"><img src="{{ asset('images/woops.png') }}" alt="Illustration" class="img-fluid"></a>
+                            <a href="/eksplorasi/${artwork.id}"><img src="{{ asset('storage/artwork/${artwork.image}') }}" alt="Illustration" class="img-fluid"></a>
                             <div class="author-info">
                                 <img src="{{ asset('images/logo.png') }}" alt="author">
-                                <p class="author-name">${artwork.user.name}, ${artwork.description}</p>
+                                <p class="author-name">${artwork.user.name}</p>
                             </div>
                         </div>
                     `;
