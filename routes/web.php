@@ -11,9 +11,9 @@ Route::get('/', function () {
 //     return view('pages.profile');
 // })->name('profile');
 
-Route::get('/edit-profile', function () {
-    return view('pages.edit-profile');
-})->name('edit.profile');
+// Route::get('/edit-profile', function () {
+//     return view('pages.edit-profile');
+// })->name('edit.profile');
 
 Route::resource('eksplorasi', App\Http\Controllers\ExplorationController::class);
 Route::post('eksplorasi/like/{id}', [App\Http\Controllers\ExplorationController::class, 'like'])->name('eksplorasi.like');
@@ -23,4 +23,6 @@ Auth::routes();
 
 Route::middleware(['isLogin'])->group(function () {
     Route::resource('profile', App\Http\Controllers\User\ArtworkController::class);
+    Route::get('user/edit-profile', [App\Http\Controllers\User\UserController::class, 'index'])->name('edit.profile');
+    Route::put('user/update', [App\Http\Controllers\User\UserController::class, 'update'])->name('update.profile');
 });

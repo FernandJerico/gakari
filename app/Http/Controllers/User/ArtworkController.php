@@ -19,8 +19,9 @@ class ArtworkController extends Controller
         $user_id = Auth::id();
         $artworks = Artwork::select('id', 'image')->with('user', 'category')->where('user_id', $user_id)->get();
         $categories = Category::select('id', 'name')->get();
+        $profile = Auth::user();
 
-        return view('pages.profile', compact('artworks', 'categories'));
+        return view('pages.profile', compact('artworks', 'categories', 'profile'));
     }
 
     /**

@@ -16,22 +16,6 @@
     </div>
     <hr>
     <div class="my-artworks">
-        <div class="row">
-            @if ($errors->any())
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <h4 class="alert-heading">There's something wrong!</h4>
-                <hr>
-                <p>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-                </p>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
-        </div>
         <div class="action mt-2">
             <button class="btn-action">Hapus</button>
             <div class="dropdown">
@@ -78,34 +62,45 @@
         <div class="d-flex flex-row w-100 px-5">
             <div class="col-lg-6 px-2">
                 <div class="mb-4">
-                    <input type="text" placeholder="Nama" name="name" id="name" readonly>
+                    <input type="text" placeholder="Nama" name="name" id="name" readonly value="{{ $profile->name }}">
                 </div>
                 <div class="mb-4">
                     <textarea rows="16" type="text" placeholder="Biografi atau deskripsi diri" name="bio" id="bio"
-                        readonly></textarea>
+                        readonly>{{ $profile->description }}</textarea>
                 </div>
                 <div class="mt-1">
-                    <textarea type="text" placeholder="Keahlian" name="keahlian" id="keahlian" readonly></textarea>
+                    <textarea type="text" placeholder="Keahlian" name="keahlian" id="keahlian"
+                        readonly>{{ $profile->skill }}</textarea>
                 </div>
             </div>
             <div class="col-lg-3 px-2 mt-5">
                 <div class="mt-3 mb-3">
-                    <input type="text" placeholder="Alamat" name="address" id="address" readonly>
+                    <input type="text" placeholder="Alamat" name="address" id="address" readonly
+                        value="{{ $profile->address }}">
                 </div>
                 <div class="mb-5">
-                    <input type="email" placeholder="Email" name="email" id="email" readonly>
+                    <input type="email" placeholder="Email" name="email" id="email" readonly
+                        value="{{ $profile->email }}">
                 </div>
                 <div class="mb-2">
-                    <input type="text" placeholder="Instagram" name="instagram" id="instagram" readonly>
+                    <input type="text" placeholder="Instagram" name="instagram" id="instagram" readonly
+                        value="{{ $profile->instagram }}">
                 </div>
                 <div class="mb-2">
-                    <input type="text" placeholder="Twitter" name="twitter" id="twitter" readonly>
+                    <input type="text" placeholder="Twitter" name="twitter" id="twitter" readonly
+                        value="{{ $profile->twitter }}">
                 </div>
                 <div class="mb-2">
-                    <input type="text" placeholder="Linkedin" name="linkedin" id="linkedin" readonly>
+                    <input type="text" placeholder="Linkedin" name="linkedin" id="linkedin" readonly
+                        value="{{ $profile->linkedin }}">
                 </div>
                 <div class="mb-2">
-                    <input type="text" placeholder="Social Media lain" name="others" id="others" readonly>
+                    <input type="text" placeholder="Facebook" name="facebook" id="facebook" readonly
+                        value="{{ $profile->facebook }}">
+                </div>
+                <div class="mb-2">
+                    <input type="text" placeholder="Website pribadi (opsional)" name="website" id="website" readonly
+                        value="{{ $profile->website }}">
                 </div>
             </div>
             <div class="col-lg-3 w-25">
