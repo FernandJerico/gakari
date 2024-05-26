@@ -71,7 +71,7 @@
         <div class="swiper-button-prev"></div>
     </div>
     <div class="others">
-        <a href="#" class="btn-other">Lainnya</a>
+        <a href="{{ route('eksplorasi.index') }}" class="btn-other">Lainnya</a>
         <img src="{{ asset('images/arrow-right2.png') }}" alt="arrow" width="16px">
     </div>
 </div>

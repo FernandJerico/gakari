@@ -30,7 +30,8 @@
                         class="img-fluid"></a>
                 <div class="author-info">
                     <img src="{{ asset('images/logo.png') }}" alt="author">
-                    <p class="author-name">{{ $artwork->user->name }}</p>
+                    <p class="author-name">{{ $artwork->user->name }}, {!! Str::limit($artwork->description, 10, ' ...')
+                        !!}</p>
                 </div>
             </div>
             @empty
@@ -63,7 +64,7 @@
                             <a href="/eksplorasi/${artwork.id}"><img src="{{ asset('storage/artwork/${artwork.image}') }}" alt="Illustration" class="img-fluid"></a>
                             <div class="author-info">
                                 <img src="{{ asset('images/logo.png') }}" alt="author">
-                                <p class="author-name">${artwork.user.name}</p>
+                                <p class="author-name">${artwork.user.name}, ${artwork.description.slice(0,10)} ...</p>
                             </div>
                         </div>
                     `;
