@@ -5,7 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.landing');
-});
+})->name('landing');
+
+Route::get('/profile', function () {
+    return view('pages.profile');
+})->name('profile');
 
 Route::resource('eksplorasi', App\Http\Controllers\ExplorationController::class);
 
