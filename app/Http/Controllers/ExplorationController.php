@@ -16,7 +16,7 @@ class ExplorationController extends Controller
      */
     public function index()
     {
-        $artworks = Artwork::with('user', 'category')->select('id', 'image', 'user_id')->where('category_id', 1)->get();
+        $artworks = Artwork::with('user', 'category')->select('id', 'image', 'description', 'user_id')->where('category_id', 1)->get();
 
         return view('pages.exploration', compact('artworks'));
     }

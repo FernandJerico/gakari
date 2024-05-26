@@ -13,7 +13,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $names = ['Digital Art', 'Poster', 'Web Desain', 'Wallpaper', 'Kerajinan Tangan', 'Ilustrasi', 'Portofolio', 'Typography', 'PowerPoint', 'Animasi', 'Tanah Liat'];
+        $names = ['Digital Art', 'Poster', 'Web Design', 'Wallpaper', 'Kerajinan Tangan', 'Ilustrasi', 'Portofolio', 'Typography', 'PowerPoint', 'Animasi', 'Tanah Liat'];
         foreach ($names as $name) {
             DB::table('categories')->insert([
                 'name' => $name,
