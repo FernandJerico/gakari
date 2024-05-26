@@ -9,7 +9,6 @@
             <div class="detail">
                 <h4>SIDKY AHMAD ELMAN</h4>
                 <p>Malang, Perum Citra Pandanwangi</p>
-                <button class="change-photo">Perbarui Foto</button>
             </div>
         </div>
         <div class="menu">
@@ -105,7 +104,8 @@
                 </div>
                 <div class="col-lg-3 w-25">
                     <div class="action">
-                        <a style="text-decoration: none;" class="btn-action">Edit profil</a>
+                        <a href="{{ route('edit.profile') }}" style="text-decoration: none;" class="btn-action">Edit
+                            profil</a>
                     </div>
                 </div>
             </div>

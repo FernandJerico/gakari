@@ -11,6 +11,10 @@ Route::get('/profile', function () {
     return view('pages.profile');
 })->name('profile');
 
+Route::get('/edit-profile', function () {
+    return view('pages.edit-profile');
+})->name('edit.profile');
+
 Route::resource('eksplorasi', App\Http\Controllers\ExplorationController::class);
 
 Auth::routes();
