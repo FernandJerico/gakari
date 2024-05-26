@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-lg-3 w-25">
                     <div class="action">
-                        <a style="text-decoration: none;" class="btn-action">Simpan</a>
+                        <button class="btn-action">Simpan</button>
                     </div>
                 </div>
             </form>
