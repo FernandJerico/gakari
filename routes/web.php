@@ -16,6 +16,8 @@ Route::get('/edit-profile', function () {
 })->name('edit.profile');
 
 Route::resource('eksplorasi', App\Http\Controllers\ExplorationController::class);
+Route::post('eksplorasi/like/{id}', [App\Http\Controllers\ExplorationController::class, 'like'])->name('eksplorasi.like');
+Route::post('eksplorasi/comment/{id}', [App\Http\Controllers\ExplorationController::class, 'comment'])->name('eksplorasi.comment');
 
 Auth::routes();
 
