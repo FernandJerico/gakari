@@ -37,18 +37,27 @@
                     @endif
                 </div>
                 <div class="comment">
-                    <p>10</p>
+                    <p>{{ $comment_count }}</p>
                     <button id="commentButton"><img src="{{ asset('images/comment.png') }}" alt="comment"></button>
+
                 </div>
             </div>
             <div class="textarea-container">
                 <div class="textarea textarea-hidden">
-                    <form action="#">
-                        <textarea id="commentTextarea" rows="4" cols="30" placeholder="Pop up textarea"></textarea>
+                    <form action="{{ route('eksplorasi.comment', $data->id) }}" method="POST">
+                        @csrf
+                        <textarea id="commentTextarea" rows="4" cols="30" placeholder="Pop up textarea"
+                            name="message"></textarea>
                         <button type="submit" class="btn-okay">ok</button>
                     </form>
                 </div>
             </div>
+            @foreach ($comments as $comment)
+            <div class="list-comment">
+                <p>{{ $comment->user->name }}</p>
+                <p>{{ $comment->message }}</p>
+            </div>
+            @endforeach
         </div>
     </div>
 </div>

@@ -110,4 +110,21 @@ class ExplorationController extends Controller
             return response()->json(['message' => 'like', 'count' => $like_count]);
         }
     }
+
+    public function comment(Request $request, string $id)
+    {
+        $auth = Auth::check();
+        if (!$auth) {
+            return redirect()->route('login');
+        }
+        $user_id = Auth::id();
+
+        Comment::create([
+            'user_id' => $user_id,
+            'artwork_id' => $id,
+            'message' => $request->input('message'),
+        ]);
+
+        return redirect()->back();
+    }
 }
