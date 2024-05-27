@@ -946,6 +946,13 @@ footer .footer-content .social p {
     background-color: var(--text-color) !important;
 }
 
+.profile-container .my-artworks .table .description {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 300px; /* Sesuaikan dengan lebar yang diinginkan */
+}
+
 .profile-container .about-me {
     display: none;
 }
