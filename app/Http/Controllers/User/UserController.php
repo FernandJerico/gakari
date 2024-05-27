@@ -38,4 +38,29 @@ class UserController extends Controller
             return redirect()->route('profile.index')->with('error', 'Profile Gagal diupdate!!');
         }
     }
+
+    public function updateProfile(Request $request)
+    {
+        try {
+            $user_id = Auth::id();
+            $profile = User::findOrFail($user_id);
+
+            $data = $request->all();
+
+            if (isset($profile->image)) {
+                unlink("storage/user/" . $profile->image);
+            }
+
+            $image = $request->file('image');
+            $image->storeAs('public/user', $image->hashName());
+
+            $data['image'] = $image->hashName();
+
+            $profile->update($data);
+
+            return redirect()->route('profile.index')->with('success', 'Photo Profile berhasil diupdate!!');
+        } catch (Exception $e) {
+            return redirect()->route('profile.index')->with('error', 'Photo Profile Gagal diupdate!!');
+        }
+    }
 }
