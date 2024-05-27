@@ -17,7 +17,7 @@ class ArtworkController extends Controller
     public function index()
     {
         $user_id = Auth::id();
-        $artworks = Artwork::select('id', 'image')->with('user', 'category')->where('user_id', $user_id)->get();
+        $artworks = Artwork::select('id', 'image', 'description', 'category_id')->with('user', 'category')->where('user_id', $user_id)->get();
         $categories = Category::select('id', 'name')->get();
         $profile = Auth::user();
 
@@ -97,9 +97,10 @@ class ArtworkController extends Controller
 
             $artwork->delete();
 
-            return redirect()->route('user.artwork.index')->with('success', 'Artwork berhasil dihapus!!');
+            return redirect()->route('profile.index')->with('success', 'Artwork berhasil dihapus!!');
         } catch (Exception $e) {
-            return redirect()->route('user.artwork.index')->with('error', 'Artwork Gagal dihapus!!');
+            dd($e->getMessage());
+            return redirect()->route('profile.index')->with('error', 'Artwork Gagal dihapus!!');
         }
     }
 }

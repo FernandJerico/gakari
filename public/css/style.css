@@ -798,6 +798,24 @@ footer .footer-content .social p {
     padding: 4px 12px;
 }
 
+.profile-container .profile-info .detail .form-control {
+    background-color: #fff !important;
+}
+
+.profile-container .profile-info .detail .btn-action {
+    padding: 6px 16px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.profile-container .profile-info .detail .btn-action:hover {
+    background-color: #cf5555;
+}
+
 .profile-container .menu {
     display: flex;
     flex-direction: row;
@@ -853,8 +871,19 @@ footer .footer-content .social p {
 }
 
 .profile-container .my-artworks .action .btn-action:hover,
-.profile-container .about-me .action .btn-action:hover {
+.profile-container .about-me .action .btn-action:hover,
+.profile-container .my-artworks .action .btn-delete:hover {
     background-color: #cf5555;
+}
+
+.profile-container .my-artworks .action .btn-delete {
+    padding: 4px 12px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .profile-container .my-artworks .artwork-content {
