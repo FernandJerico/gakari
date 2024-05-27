@@ -14,15 +14,27 @@
             @else
                 <div class="dropdown">
                     <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        <img src="{{ asset('images/default-profile.png') }}" alt="Default" width="50px">
+                        @if (auth()->user()->image)
+                            <img src="{{ asset('storage/user/' . auth()->user()->image) }}" alt="Default" width="50px"
+                                height="50px" style="border-radius: 50%; object-fit: cover;">
+                        @else
+                            <img src="{{ asset('images/default-profile.png') }}" alt="Default" width="50px"
+                                style="border-radius: 50%">
+                        @endif
                     </button>
                     <ul class="dropdown-menu">
                         <div class="profile">
-                            <img src="{{ asset('images/default-profile.png') }}" alt="Default" width="50px">
+                            @if (auth()->user()->image)
+                                <img src="{{ asset('storage/user/' . auth()->user()->image) }}" alt="Default"
+                                    width="50px" height="50px" style="border-radius: 50%; object-fit: cover;">
+                            @else
+                                <img src="{{ asset('images/default-profile.png') }}" alt="Default" width="50px"
+                                    style="border-radius: 50%">
+                            @endif
                             <h6>{{ auth()->user()->name }}</h6>
                         </div>
                         <div class="menu mt-2">
-                            <a href="{{ route('profile') }}">Profil</a>
+                            <a href="{{ route('profile.index') }}">Profil</a>
                             <a href="#">Unggah Karya</a>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

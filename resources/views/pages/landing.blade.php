@@ -60,40 +60,21 @@
         <h1>Eksplorasi</h1>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                </div>
+                @foreach ($explorations as $exploration)
+                    <div class="swiper-slide">
+                        <img style="aspect-ratio: 1/1; object-fit: cover;"
+                            src="{{ asset('storage/artwork/' . $exploration->image) }}" />
+                    </div>
+                @endforeach
+
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
         <div class="others">
-            <a href="#" class="btn-other">Lainnya</a>
-            <img src="{{ asset('images/arrow-right2.png') }}" alt="arrow" width="16px">
+            <a href="{{ route('eksplorasi.index') }}" class="btn-other">Lainnya</a>
+            <a href="{{ route('eksplorasi.index') }}"><img src="{{ asset('images/arrow-right2.png') }}" alt="arrow"
+                    width="16px"></a>
         </div>
     </div>
 @endsection

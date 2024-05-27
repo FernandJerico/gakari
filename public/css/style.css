@@ -326,7 +326,7 @@ header nav {
     gap: 16px;
 }
 
-.explore .others a {
+.explore .others .btn-other {
     display: inline-block;
     padding: 16px 76px;
     text-decoration: none;
@@ -337,7 +337,7 @@ header nav {
     font-weight: 600;
 }
 
-.explore .others a:hover {
+.explore .others .btn-other:hover {
     background-color: #101736;
 }
 /* End Landing Page Section */
@@ -422,7 +422,6 @@ header nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px;
     gap: 4px;
 }
 
@@ -575,16 +574,17 @@ footer .footer-content .social p {
 
 .detail-exploration .content-left .author-info {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    gap: 20px;
+    width: 470px;
 }
 
 .detail-exploration .content-left .author-info .name {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 4px;
 }
 
 .detail-exploration .content-left .author-info .name h4 {
@@ -605,19 +605,27 @@ footer .footer-content .social p {
     text-decoration: none;
 }
 
+.detail-exploration .content-left .artwork {
+    width: 470px;
+    height: 625px;
+}
+
 .detail-exploration .content-left .artwork img {
     width: 100%;
-    height: 750px;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
 
 .detail-exploration .content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 56px;
 }
 
 .detail-exploration .content-right .description {
-    width: 351px;
+    width: 450px;
     padding: 20px;
     border: 1px solid var(--text-color);
     border-radius: 10px;
@@ -629,6 +637,7 @@ footer .footer-content .social p {
     align-items: center;
     justify-content: end;
     margin: 8px 0 8px 0;
+    width: 450px;
 }
 
 .detail-exploration .content-right .like-comment .like,
@@ -659,11 +668,22 @@ footer .footer-content .social p {
     margin-top: -12px;
 }
 
+.detail-exploration .content-right .list-comment {
+    display: flex;
+    width: 450px;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid var(--text-color);
+    padding: 8px;
+    margin-top: 8px;
+}
+
 .detail-exploration .content-right .textarea-container {
     display: flex;
     align-items: end;
     justify-content: end;
     margin-right: 8px;
+    width: 450px;
 }
 
 .textarea-hidden {
@@ -787,6 +807,24 @@ footer .footer-content .social p {
     padding: 4px 12px;
 }
 
+.profile-container .profile-info .detail .form-control {
+    background-color: #fff !important;
+}
+
+.profile-container .profile-info .detail .btn-action {
+    padding: 6px 16px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.profile-container .profile-info .detail .btn-action:hover {
+    background-color: #cf5555;
+}
+
 .profile-container .menu {
     display: flex;
     flex-direction: row;
@@ -842,8 +880,19 @@ footer .footer-content .social p {
 }
 
 .profile-container .my-artworks .action .btn-action:hover,
-.profile-container .about-me .action .btn-action:hover {
+.profile-container .about-me .action .btn-action:hover,
+.profile-container .my-artworks .action .btn-delete:hover {
     background-color: #cf5555;
+}
+
+.profile-container .my-artworks .action .btn-delete {
+    padding: 4px 12px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .profile-container .my-artworks .artwork-content {
@@ -904,6 +953,13 @@ footer .footer-content .social p {
     border-radius: 5px;
     color: var(--background-color);
     background-color: var(--text-color) !important;
+}
+
+.profile-container .my-artworks .table .description {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 300px; /* Sesuaikan dengan lebar yang diinginkan */
 }
 
 .profile-container .about-me {
