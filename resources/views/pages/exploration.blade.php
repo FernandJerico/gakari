@@ -1,37 +1,22 @@
 @extends('layouts.main')
 
 @section('section')
-<div class="exploration">
-    <h1 class="title">Eksplorasi</h1>
-    <div class="exploration-category mt-5 d-flex align-items-center">
-        <div class="row">
-            <div class="choice-chip-container d-flex flex-wrap justify-content-center">
-                <button class="choice-chip active">Digital Art</button>
-                <button class="choice-chip">Poster</button>
-                <button class="choice-chip">Web Design</button>
-                <button class="choice-chip">Wallpaper</button>
-                <button class="choice-chip">Kerajinan Tangan</button>
-                <button class="choice-chip">Ilustrasi</button>
-                <button class="choice-chip">Portofolio</button>
-                <button class="choice-chip">Typography</button>
-                <button class="choice-chip">PowerPoint</button>
-                <button class="choice-chip">Animasi</button>
-                <button class="choice-chip">Tanah Liat</button>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="exploration-card">
-        <div class="row">
-            @forelse ($artworks as $artwork)
-            <div class="card-artworks">
-                <a href="{{ route('eksplorasi.show', $artwork->id) }}"><img
-                        src="{{ asset('storage/artwork/' . $artwork->image) }}" alt="Illustration"
-                        class="img-fluid"></a>
-                <div class="author-info">
-                    <img src="{{ asset('images/logo.png') }}" alt="author">
-                    <p class="author-name">{{ $artwork->user->name }}, {!! Str::limit($artwork->description, 10, ' ...')
-                        !!}</p>
+    <div class="exploration">
+        <h1 class="title">Eksplorasi</h1>
+        <div class="exploration-category mt-5 d-flex align-items-center">
+            <div class="row">
+                <div class="choice-chip-container d-flex flex-wrap justify-content-center">
+                    <button class="choice-chip active">Digital Art</button>
+                    <button class="choice-chip">Poster</button>
+                    <button class="choice-chip">Web Design</button>
+                    <button class="choice-chip">Wallpaper</button>
+                    <button class="choice-chip">Kerajinan Tangan</button>
+                    <button class="choice-chip">Ilustrasi</button>
+                    <button class="choice-chip">Portofolio</button>
+                    <button class="choice-chip">Typography</button>
+                    <button class="choice-chip">PowerPoint</button>
+                    <button class="choice-chip">Animasi</button>
+                    <button class="choice-chip">Tanah Liat</button>
                 </div>
             </div>
         </div>
@@ -39,19 +24,18 @@
         <div class="exploration-card">
             <div class="row">
                 @forelse ($artworks as $artwork)
-                <div class="card-artworks">
-                    <a href="{{ route('eksplorasi.show', $artwork->id) }}"><img
-                            src="{{ asset('storage/artwork/' . $artwork->image) }}" alt="Illustration"
-                            class="img-fluid"></a>
-                    <div class="author-info">
-                        <img src="{{ asset('images/logo.png') }}" alt="author">
-                        <p class="author-name mt-2">{{ $artwork->user->name }}, judul karya</p>
+                    <div class="card-artworks">
+                        <a href="{{ route('eksplorasi.show', $artwork->id) }}"><img
+                                src="{{ asset('storage/artwork/' . $artwork->image) }}" alt="Illustration"
+                                class="img-fluid"></a>
+                        <div class="author-info">
+                            <img src="{{ asset('images/logo.png') }}" alt="author">
+                            <p class="author-name">{{ $artwork->user->name }}, {!! Str::limit($artwork->description, 10, ' ...') !!}</p>
+                        </div>
                     </div>
-                </div>
                 @empty
-                <p>Tidak ada karya</p>
+                    <p>Tidak ada karya</p>
                 @endforelse
-
             </div>
         </div>
     </div>
@@ -79,11 +63,7 @@
                         $.each(response, function(index, artwork) {
                             var card = `
                         <div class="card-artworks">
-<<<<<<< HEAD
                             <a href="/eksplorasi/${artwork.id}"><img src="{{ asset('storage/artwork/${artwork.image}') }}" alt="Illustration" class="img-fluid"></a>
-=======
-                            <a href="/eksplorasi/${artwork.id}"><img src="{{ asset('storage/artwork/' . $artwork->image) }}" alt="Illustration" class="img-fluid"></a>
->>>>>>> e149b13026e33a53a7ecb39b42fdb16b102c9da0
                             <div class="author-info">
                                 <img src="{{ asset('images/logo.png') }}" alt="author">
                                 <p class="author-name">${artwork.user.name}, ${artwork.description.slice(0,10)} ...</p>
@@ -100,4 +80,4 @@
             });
         });
     </script>
-    @endsection
+@endsection
