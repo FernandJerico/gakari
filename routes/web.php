@@ -15,4 +15,5 @@ Route::middleware(['isLogin'])->group(function () {
     Route::resource('profile', App\Http\Controllers\User\ArtworkController::class)->except('create', 'show', 'edit', 'update');
     Route::get('user/edit-profile', [App\Http\Controllers\User\UserController::class, 'index'])->name('edit.profile');
     Route::put('user/update', [App\Http\Controllers\User\UserController::class, 'update'])->name('update.profile');
+    Route::put('user/update-photo', [App\Http\Controllers\User\UserController::class, 'updateProfile'])->name('update.profile.photo');
 });
