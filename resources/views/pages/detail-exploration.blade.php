@@ -9,7 +9,7 @@
                 <div class="author-info d-flex justify-content-between">
                     <div class="name">
                         @if ($data->user->image)
-                            <img width="40px" style="border-radius: 50%"
+                            <img width="40px" height="40px" style="border-radius: 50%; object-fit: cover;"
                                 src="{{ asset('storage/user/' . $data->user->image) }}" alt="author">
                         @else
                             <img width="40px" style="border-radius: 50%" src="{{ asset('images/default-profile.png') }}">
@@ -60,10 +60,10 @@
                     <div class="list-comment">
                         <div class="d-flex flex-row align-items-center gap-1">
                             @if ($comment->user->image)
-                                <img width="5%" style="border-radius: 50%"
+                                <img width="34px" height="34px" style="border-radius: 50%; object-fit: cover;"
                                     src="{{ asset('storage/user/' . $comment->user->image) }}" alt="author">
                             @else
-                                <img width="5%" style="border-radius: 50%"
+                                <img width="34px" style="border-radius: 50%"
                                     src="{{ asset('images/default-profile.png') }}">
                             @endif
                             <h6 class="mt-1">{{ $comment->user->name }}</h6>
