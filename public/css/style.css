@@ -577,6 +577,7 @@ footer .footer-content .social p {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    width: 470px;
 }
 
 .detail-exploration .content-left .author-info .name {
@@ -604,19 +605,27 @@ footer .footer-content .social p {
     text-decoration: none;
 }
 
+.detail-exploration .content-left .artwork {
+    width: 470px;
+    height: 625px;
+}
+
 .detail-exploration .content-left .artwork img {
     width: 100%;
-    height: 550px;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
 
 .detail-exploration .content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 56px;
 }
 
 .detail-exploration .content-right .description {
-    width: 75%;
+    width: 450px;
     padding: 20px;
     border: 1px solid var(--text-color);
     border-radius: 10px;
@@ -628,7 +637,7 @@ footer .footer-content .social p {
     align-items: center;
     justify-content: end;
     margin: 8px 0 8px 0;
-    width: 75%;
+    width: 450px;
 }
 
 .detail-exploration .content-right .like-comment .like,
@@ -661,7 +670,7 @@ footer .footer-content .social p {
 
 .detail-exploration .content-right .list-comment {
     display: flex;
-    width: 75%;
+    width: 450px;
     flex-direction: column;
     border-radius: 8px;
     border: 1px solid var(--text-color);
@@ -674,7 +683,7 @@ footer .footer-content .social p {
     align-items: end;
     justify-content: end;
     margin-right: 8px;
-    width: 75%;
+    width: 450px;
 }
 
 .textarea-hidden {
@@ -944,6 +953,13 @@ footer .footer-content .social p {
     border-radius: 5px;
     color: var(--background-color);
     background-color: var(--text-color) !important;
+}
+
+.profile-container .my-artworks .table .description {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 300px; /* Sesuaikan dengan lebar yang diinginkan */
 }
 
 .profile-container .about-me {
