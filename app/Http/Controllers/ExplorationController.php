@@ -92,7 +92,7 @@ class ExplorationController extends Controller
     {
         $auth = Auth::check();
         if (!$auth) {
-            return redirect()->route('login');
+            return response()->json(['message' => 'silakan login terlebih dahulu']);
         }
         $user_id = Auth::id();
 

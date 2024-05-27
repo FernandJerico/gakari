@@ -4,9 +4,9 @@
     <div class="detail-exploration">
         <a href="{{ route('eksplorasi.index') }}"><img src="{{ asset('images/back.png') }}" alt="back" width="47px"
                 class="back"></a>
-        <div class="row d-flex flex-row">
+        <div class="row d-flex">
             <div class="content-left col-lg-6">
-                <div class="author-info w-100 d-flex justify-content-between">
+                <div class="author-info d-flex justify-content-between">
                     <div class="name">
                         @if ($data->user->image)
                             <img width="40px" style="border-radius: 50%"
@@ -90,8 +90,8 @@
                         $('#likeButton').hide();
                         $('#unlikeButton').show();
                     },
-                    error: function(xhr) {
-                        console.log(xhr.responseText);
+                    error: function(response) {
+                        console.log(response);
                     }
                 });
             });
