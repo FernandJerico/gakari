@@ -99,7 +99,6 @@ class ArtworkController extends Controller
 
             return redirect()->route('profile.index')->with('success', 'Artwork berhasil dihapus!!');
         } catch (Exception $e) {
-            dd($e->getMessage());
             return redirect()->route('profile.index')->with('error', 'Artwork Gagal dihapus!!');
         }
     }
